@@ -1,8 +1,8 @@
 /**
  * 图片消息渲染器
- * @param h $createElement 函数
- * @param data 要渲染的数据
- * @returns VNode
+ * @param { function } h 函数（$createElement）
+ * @param { Object } data 要渲染的数据
+ * @returns { VNode }
  */
 export default function imageRenderer(h, data) {
     const { type, content } = data;
@@ -16,6 +16,7 @@ export default function imageRenderer(h, data) {
 
     const imageNode = h(
         'img',
+
         {
             staticClass: 'image-message__img',
             domProps: {

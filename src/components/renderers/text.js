@@ -2,9 +2,9 @@ let triangleNode;
 
 /**
  * 文本消息渲染器
- * @param h $createElement 函数
- * @param data 要渲染的数据
- * @returns VNode
+ * @param { function } h 函数（$createElement）
+ * @param { Object } data 要渲染的数据
+ * @returns { VNode }
  */
 export default function textRenderer(h, data) {
     const { content, type } = data;
@@ -22,6 +22,7 @@ export default function textRenderer(h, data) {
     if (!triangleNode) {
         triangleNode = h(
             'aside',
+
             {
                 staticClass: 'text-message__triangle'
             }
@@ -30,6 +31,7 @@ export default function textRenderer(h, data) {
 
     const contentNode = h(
         'span',
+
         {
             staticClass: 'text-message__content',
             domProps: {
