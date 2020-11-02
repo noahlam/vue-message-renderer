@@ -3,7 +3,7 @@ import renderSystemMessage from '@/components/renderers/system.js';
 
 const { $createElement: h } = new Vue();
 
-describe('/components/renderers/image.js', () => {
+describe('/components/renderers/system.js', () => {
     it('system-message vnode render normal data', () => {
         const data = {
             id: 9,
