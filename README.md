@@ -173,7 +173,7 @@ export default {
 在主渲染器内部, 还会经过两个事件钩子.
 然后再根据特定的类型, 加载对应类型的消息渲染器.
 
-![./public/MessageRenderer.png]('https://gd-filems.dancf.com/mps/mcm79j/mcm79j/09c0cb22-83ef-4e7f-abc2-01fe8a91ca71.png')
+![https://gd-filems.dancf.com/mps/mcm79j/mcm79j/09c0cb22-83ef-4e7f-abc2-01fe8a91ca71.png]('https://gd-filems.dancf.com/mps/mcm79j/mcm79j/09c0cb22-83ef-4e7f-abc2-01fe8a91ca71.png')
 
 消息类型渲染器对动态去读取 放在 @/components/renderers 目录下, 与消息类型同名的 .js 文件
 目前仅支持 text, image, system 三种类型消息, 如需新增类型支持, 可以自行扩展.
