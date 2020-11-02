@@ -102,7 +102,7 @@ describe('/components/message-framework.js', () => {
 
         const { element } = messageFramework;
 
-        expect(element.childNodes.length).toBe(1);
+        expect(element.childNodes.length).toBe(0);
     });
 
     it('customelize system message renderer', () => {
