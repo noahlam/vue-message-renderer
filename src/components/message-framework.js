@@ -7,7 +7,7 @@ import { getAvatarByUserId } from '../data/mock-data';
  * @param { object } renderers 各类消息定制渲染器
  * @return { VNode }
  */
-function $render(h, data, renderers = {}) {
+function $render(h, data, renderers) {
     const { from_user_id: userId, type } = data;
     const needShowAvatar = !!userId;
     const isFromSelf = userId === 'me';

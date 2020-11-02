@@ -6,7 +6,7 @@ const { $createElement: h } = new Vue();
 
 
 describe('/components/message-framework.js', () => {
-    it('renders text message', () => {
+    it('render text message', () => {
         const data = {
             id: 1,
             type: 'text',
@@ -34,11 +34,11 @@ describe('/components/message-framework.js', () => {
         expect(element.childNodes[1].className).toBe('text-message message-common');
     });
 
-    it('renders image message', () => {
+    it('render image message', () => {
         const data = {
             id: 3,
             type: 'image',
-            from_user_id: 'user_2',
+            from_user_id: 'me',
             content: {
                 url: 'https://gd-filems.dancf.com/mps/mcm79j/mcm79j/99d234c4-34ea-4736-8694-be9cc6606f16.jpg'
             }
@@ -57,7 +57,7 @@ describe('/components/message-framework.js', () => {
         expect(element.childNodes[1].className).toBe('image-message message-common');
     });
 
-    it('renders system message', () => {
+    it('render system message', () => {
         const data = {
             id: 5,
             type: 'system',
@@ -77,6 +77,32 @@ describe('/components/message-framework.js', () => {
 
         expect(element.childNodes.length).toBe(1);
         expect(element.childNodes[0].className).toBe('system-message message-common');
+    });
+
+    it('render unhandle-type message', () => {
+        const data = {
+            id: 5,
+            type: 'unknown',
+            from_user_id: undefined,
+        };
+
+        const messageFramework = mount(MessageFramework, {
+            propsData: {
+                data
+            }
+        });
+
+        const { element } = messageFramework;
+
+        expect(element.childNodes.length).toBe(0);
+    });
+
+    it('render text message whitout content', () => {
+        const messageFramework = mount(MessageFramework);
+
+        const { element } = messageFramework;
+
+        expect(element.childNodes.length).toBe(1);
     });
 
     it('customelize system message renderer', () => {
